@@ -7,13 +7,13 @@ const intern = require('./lib/intern');
 const fs = require('fs'); 
 const inquirer = require('inquirer');
 
-// link to page creation
+// file that creates the webpage for team profile
 const generateHTML = require('./src/generateHTML');
 
-// team array
+// pro team array list
 const team = [];
 
-// MANAGER
+// MANAGER node questions
 const addManager = () => {
     return inquirer.prompt ([
         {
@@ -49,41 +49,41 @@ const addManager = () => {
     })
 };
 
-// EMPLOYEE
-const addEmployee = () => {
-    return inquirer.prompt ([
-        {
-            type: 'input',
-            name: 'first name and last name',
-            message: 'Who is the team manager?',
-            validate: nameInput => {
-                if (nameInput) {
-                return true;
-            } else {
-                console.log("Please, enter the name of the team manager.");
-                return false;
-            }
-        }
-    },
-    {
-        type: 'input',
-            name: 'identification',
-            message: 'Please, enter the numeric ID code of your manager.',
-            validate: nameInput => {
-                if (isNaN(nameInput)) {
-                return true;
-            } else {
-                console.log("Please, enter the ID number of your manager.");
-                return false;
-            }
-        }
-    },
-    ])
-    .then(managerInfo => {
-        const { name, id, email }  = managerInfo;
-        const manager = new Manager (name, id, email);
-    })
-};
+// EMPLOYEE node questions, keep working on this part
+// const addEmployee = () => {
+//     return inquirer.prompt ([
+//         {
+//             type: 'input',
+//             name: 'first name and last name',
+//             message: 'Who is the team manager?',
+//             validate: nameInput => {
+//                 if (nameInput) {
+//                 return true;
+//             } else {
+//                 console.log("Please, enter the name of the team manager.");
+//                 return false;
+//             }
+//         }
+//     },
+//     {
+//         type: 'input',
+//             name: 'identification',
+//             message: 'Please, enter the numeric ID code of your manager.',
+//             validate: nameInput => {
+//                 if (isNaN(nameInput)) {
+//                 return true;
+//             } else {
+//                 console.log("Please, enter the ID number of your manager.");
+//                 return false;
+//             }
+//         }
+//     },
+//     ])
+//     .then(managerInfo => {
+//         const { name, id, email }  = managerInfo;
+//         const manager = new Manager (name, id, email);
+//     })
+// };
 
 // Generate HTML with Node info and file system
 const writeFile = data => {
@@ -97,7 +97,7 @@ const writeFile = data => {
     })
 };
 
-// run addManager fxn
-addManager()
-    .then(addEmployee)
-    .then(team => { });
+// run addManager fxn, keep working on this
+// addManager()
+//     .then(addEmployee)
+//     .then(team => { });
