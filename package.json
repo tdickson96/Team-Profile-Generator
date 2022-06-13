@@ -1,0 +1,30 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "Node and Inquirer project that will take  your team name and information.",
+  "main": "app.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tdickson96/Team-Profile-Generator.git"
+  },
+  "keywords": [
+    "jest",
+    "node",
+    "inquirer",
+    "file",
+    "system"
+  ],
+  "author": "Trent Dickson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tdickson96/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/tdickson96/Team-Profile-Generator#readme"
+}
