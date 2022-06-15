@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+#navbar {
+    background-color: green;
+    color: greenyellow;
+    font-size: 30px;
+}
+
+.navbar-brand {
+    font-size: 30px;
+}
+
+
+.card-header {
+    background-color: green;
+    color: greenyellow;
+}
+
+.card-body {
+    background-color: green;
+    color: greenyellow;
+}
+
+.container {
+    margin: auto;
+    display: flex;
+}
