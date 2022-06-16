@@ -30,21 +30,34 @@
 ---
 ## About 
 
-    Creating a webpage with the basic information of your professional work team. Runs using Node and Inquirer.
+    Creating a webpage with the basic information of your professional work team. Runs using Node and Inquirer. Test with Jest. Uses Bootstrap and jQuery. 
 
 ---
 ## Story
 
+    As a team lead, I wanted to develop basic informational cards on my employees that I can share with other professions and add to our client website.
+
 ---
-## Criteria
+## Video Walkthrough
+
+    Running the application in the command-line: https://drive.google.com/file/d/148mM57cIo2JbZg_ySWyfJPOXeA34E0jv/view 
+    Running the tests in the command-line with Jest: 
 
 ---
 ## Technology
 
+    Node
+    Inquirer
+    Jest
+    JavaScript
+    jQuery
+    Bootstrap
+    Materials Icons
+
 ---
 ## Install
 
-    Clone the repository, install dependencies, and in command-line type "node app.js"
+    Clone the repository, Node.js installed, install dependencies ("npm install"), and in command-line type "node app.js"
 
     Clone the repository:
 
@@ -68,7 +81,9 @@
 ---
 ## Tests
 
-    Jest
+    Four test suites with test cases in './test' folder powered by Jest.
+    "npm install"
+    "npm test"
 
 ---
 ## Authors
@@ -80,4 +95,12 @@
 
 > GitHub username: tdickson96
 > Contact email: trentdickson22@gmail.com
+
+---
+## Special Thanks
+
+    Nicole Wallace: https://github.com/nicolewallace09/team-profile-generator 
+    Ryan Ellingson: https://github.com/RyanEllingson/Team-Profile-Generator 
+    John Vayianos: https://codetea.com/team-profile-generator-with-javascript/ 
+
 
