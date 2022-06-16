@@ -1,5 +1,5 @@
 // team profiles
-// const Employee = require('./lib/Employee.js');
+// const Employee = require('./lib/employee.js');
 const Manager = require('./lib/manager.js');
 const Engineer = require('./lib/engineer.js');
 const Intern = require('./lib/intern.js'); 
@@ -17,61 +17,69 @@ const employees = [];
 // MANAGER node questions
 const addManager = () => {
     return inquirer.prompt ([
+            {
+                type: 'input',
+                name: 'name',
+                message: 'Who is the team manager?',
+                // Ensure that a name is input or bounceback
+                validate: nameInput => {
+                    if (nameInput) {
+                    return true;
+                } else {
+                    console.log("Please, enter the name of the team manager.");
+                    return false;
+                }
+            }
+        },
         {
             type: 'input',
-            name: 'name',
-            message: 'Who is the team manager?',
-            // Ensure that a name is input or bounceback
+            name: 'id',
+            message: 'Please, enter the numeric ID code of your manager.',
+            // ensure a number is entered, not a string
+            validate: nameInput => {
+                // if nameInput in not a number
+                if (isNaN(nameInput)) {
+                    // Repeat the question to try and get user to input number
+                    console.log("Please, enter the ID number of your manager.");
+                    // Exit function
+                    return false;
+                } else {
+                    // If numeric code is a number, then exit function and move on
+                    return true;
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is the email of the team manager?',
             validate: nameInput => {
                 if (nameInput) {
-                return true;
-            } else {
-                console.log("Please, enter the name of the team manager.");
-                return false;
+                    return true;
+                } else {
+                    console.log ('Please enter an email.')
+                    return false; 
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'office',
+            message: 'What is the office number of the team manager?',
+            // ensure a number is entered, not a string
+            validate: nameInput => {
+                // if nameInput in not a number
+                if (isNaN(nameInput)) {
+                    // Repeat the question to try and get user to input number
+                    console.log("Please, enter the office number of the manager.");
+                    // Exit function
+                    return false;
+                } else {
+                    // If office number is a number, then exit function and move on
+                    return true;
+                }
             }
         }
-    },
-    {
-        type: 'input',
-        name: 'id',
-        message: 'Please, enter the numeric ID code of your manager.',
-        // ensure a number is entered, not a string
-        validate: nameInput => {
-            // if nameInput in not a number
-            if (isNaN(nameInput)) {
-                // Repeat the question to try and get user to input number
-                console.log("Please, enter the ID number of your manager.");
-                // Exit function
-                return false;
-            } else {
-                // If numeric code is a number, then exit function and move on
-                return true;
-            }
-        }
-    },
-    {
-        type: 'input',
-        name: 'email',
-        message: 'What is the email of the team manager?',
-    },
-    {
-        type: 'input',
-        name: 'office',
-        message: 'What is the office number of the team manager?',
-        // ensure a number is entered, not a string
-        validate: nameInput => {
-            // if nameInput in not a number
-            if (isNaN(nameInput)) {
-                // Repeat the question to try and get user to input number
-                console.log("Please, enter the office number of the manager.");
-                // Exit function
-                return false;
-            } else {
-                // If office number is a number, then exit function and move on
-                return true;
-            }
-        }
-    }
     ])
     // Then take the team manager input info
     .then(managerInfo => {
@@ -82,14 +90,14 @@ const addManager = () => {
 
         // Push manager to the team array so it can be added to the generateHTML
         employees.push(manager);
-        // I am not seeing the value, so let's log it
-        console.log(manager);
     })
 };
 
 // EMPLOYEE node questions, keep working on this part
 const addEmployee = () => {
-    console.log(`--- Add employee information ---`);
+    console.log(`
+    --- Add employee information ---
+    `);
     return inquirer.prompt ([
         {
             type: 'list',
@@ -103,10 +111,10 @@ const addEmployee = () => {
             name: 'id',
             message: 'Please, enter the numeric ID code of the employee.',
             validate: nameInput => {
-                if (nameInput) {
+                if (isNaN(nameInput)) {
+                    console.log("Please, enter the ID number of the employee.");
                     return false;
                 } else {
-                    console.log("Please, enter the ID number of the employee.");
                     return true;
                 }
             }
@@ -124,7 +132,11 @@ const addEmployee = () => {
                 }
             }
         },
-        // ENGINEER specific question, use WHEN to limit the question to LIST CHOICE === ENGINEER
+        {
+            type: 'input',
+            name: 'email',
+            message: "What is the email of the employee?"
+        },
         {
             // Limit question to ENGINEER
             when: (input) => input.role === 'Engineer',        
@@ -139,13 +151,12 @@ const addEmployee = () => {
                 }
             }
         },
-        // INTERN specific question, use WHEN to limit the question to LIST CHOICE === INTERN
         {
             // Limit question to INTERN
             when: (input) => input.role === 'Intern',   
             type: 'input',
-            name: 'institution',
-            message: 'Please, enter the educational institution of the Intern.',
+            name: 'school',
+            message: 'Please, enter the school institution of the Intern.',
             validate: nameInput => {
                 if (nameInput) {
                     return true;
@@ -163,11 +174,9 @@ const addEmployee = () => {
         }
     ])
     // like managerInfo let's make an employee variable to add to the employees array
-    // institution and addEmployee values are not being read
+    // school and addEmployee values are not being read
     .then(employeeInfo => {
-        let { name, id, email, role, github, institution, anotherEmployee }  = employeeInfo;
-        console.log(anotherEmployee);
-        console.log(institution);
+        let { name, id, email, role, github, school, anotherEmployee }  = employeeInfo;
         let employee;
 
         // scope the engineer to this block
@@ -177,14 +186,14 @@ const addEmployee = () => {
         }
 
         // scope the intern to this block
-        if (role === intern) {
-            employee = new Intern(name, id, email, institution);
+        if (role === 'Intern') {
+            employee = new Intern(name, id, email, school);
             console.log(employee);
         }
 
-        employees.push(employees);
+        employees.push(employee);
 
-        if (addEmployee) {
+        if (anotherEmployee) {
             return addEmployee(employees);
         } else {
             return employees;
