@@ -41,7 +41,7 @@
 ## Video Walkthrough
 
     Running the application in the command-line: https://drive.google.com/file/d/148mM57cIo2JbZg_ySWyfJPOXeA34E0jv/view 
-    Running the tests in the command-line with Jest: 
+    Running the tests in the command-line with Jest: https://drive.google.com/file/d/1cxNUjwfQvZp1Aef_nDV7VGW-vusRt9Hp/view 
 
 ---
 ## Technology
@@ -84,6 +84,7 @@
     Four test suites with test cases in './test' folder powered by Jest.
     "npm install"
     "npm test"
+    Test video: https://drive.google.com/file/d/1cxNUjwfQvZp1Aef_nDV7VGW-vusRt9Hp/view 
 
 ---
 ## Authors
