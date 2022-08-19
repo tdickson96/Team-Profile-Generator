@@ -4,11 +4,10 @@
 
     Node and Inquirer project that will take  your team name and information.
 
-    MIT
 
-    [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-    [Find the link to deployed website here:](https://github.com/tdickson96/Team-Profile-Generator)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 
 ---
 ## Table of Contents
@@ -40,8 +39,15 @@
 ---
 ## Video Walkthrough
 
-    Running the application in the command-line: https://drive.google.com/file/d/148mM57cIo2JbZg_ySWyfJPOXeA34E0jv/view 
-    Running the tests in the command-line with Jest: https://drive.google.com/file/d/1cxNUjwfQvZp1Aef_nDV7VGW-vusRt9Hp/view 
+[Running the application in the command-line](https://drive.google.com/file/d/148mM57cIo2JbZg_ySWyfJPOXeA34E0jv/view)
+
+[Running the tests in the command-line with Jest](https://drive.google.com/file/d/1cxNUjwfQvZp1Aef_nDV7VGW-vusRt9Hp/view)
+
+![demo](./assets/images/demo0.png)
+
+![demo](./assets/images/demo1.png)
+
+![demo](./assets/images/demo2.png)
 
 ---
 ## Technology
